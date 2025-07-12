@@ -17,3 +17,11 @@ def get_book_text(filepath: str) -> str:
 def get_word_count(file_contents: str) -> int:
     words = file_contents.split()
     return len(words)
+
+
+def sort_dict_characters(input: dict[str, int]) -> list[dict]:
+    sorted_list = []
+    for x in input.keys():
+        if x.isalpha():
+            sorted_list.append({"char": x, "num": input[x]})
+    return sorted(sorted_list, key=lambda x: x['num'], reverse=True)
